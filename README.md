@@ -1,6 +1,8 @@
 # NYC Yellow Taxi Analysis
 
-Yearly / hourly NYC yellow taxi analysis from 2011 to 2022. In each year, there are 12 parquet files for each month. Each parquet file contains approximately 13,000,000 rows with columns as follows:
+![logo](./viz/nyc-tlc-logo.png)
+
+A yearly / hourly NYC yellow taxi analysis from 2011 to 2022. In each year, there are 12 parquet files for each month. Each parquet file contains approximately 13,000,000 rows with columns as follows:
 
 | Field Name | Description                                                                                                                                     |
 | -----------|------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -67,3 +69,9 @@ Since there are too many rows for my local computer to handle, each parquet file
 ## Iterating Process
 
 Even after excluding all irrelevant data, there are still 142 parquet files to import, clean, and analyze. It is inefficient to conduct this procedure manually for each data set. With defined python functions, the whole process is applied to each data set automatically. Then all processed data sets are concatenated into a final data frame with 12,689,473 rows. After a minor cleaning process, the final data frame has approximately 12,688,000 rows. This data is then imported to the tableau for visualization.
+
+## Visualization
+
+An interactice visulization using Tableau. It can be found [here](https://public.tableau.com/app/profile/junhyeok.park/viz/NYCYellowTaxi_16721581629340/NYCTraffic).
+
+![viz-1](./viz/viz-1.png)
