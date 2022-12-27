@@ -3,7 +3,7 @@
 Yearly / hourly NYC yellow taxi analysis from 2011 to 2022. In each year, there are 12 parquet files for each month. Each parquet file contains approximately 13,000,000 rows with columns as follows:
 
 | Field Name | Description                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| -----------|------------------------------------------------------------------------------------------------------------------------------------------------ |
 | VendorID | A code indicating the TPEP provider that provided the record. 1=Creative Mobile Technologies                                                      |
 | tpep_pickup_datetime | The date and time when the meter was engaged.                                                                                         |
 | tpep_dropoff_datetime|The date and time when the meter was disengaged.                                                                                       |
