@@ -40,6 +40,10 @@ Among these 19 columns, only `tpep_pickup_datetime`, `tpep_dropoff_datetime`, `t
 2. The average fare/tip amount, ride time, and distance per pick-up location id.
 3. Which pick-up location is more likely to have a higher fare amount?
 
+![duck-logo](./viz/duckdb-logo.png)
+
+[DuckDB](https://duckdb.org/), a simple and fast database management system, is mainly used throughout the analysis. It works seamlessly with Pandas and allows you to directly query parquet files. Most function names come from Postgres and relational API targets Pandas compatibility. More advantages of using DuckDB are listed [here](https://alex-monahan.github.io/2021/08/22/Python_and_SQL_Better_Together.html).
+
 ## Data Importing
 
 There are 166 parquet files in total for all yellow taxi ride records from January 2009 to September 2022 and each file size ranges between 20MB to 400 MB. Due to column specification (data before 2011 have pickup location latitude and longitude instead of location id which makes it difficult to analyze), only data since 2011 are imported for the analysis. To automatically import the parquet files, all relevant links are retrieved by request and beautifulsoup python packages. To reduce file size, only desired columns for the analysis are specified when importing data. Also, during the analysis, certain column data types are converted to more efficient types to save memory usage (int => float). 
