@@ -2,6 +2,8 @@
 
 ![logo](./viz/nyc-tlc-logo.png)
 
+### [Report can be found here](./preprocess.ipynb)
+
 A yearly / hourly NYC yellow taxi analysis from 2011 to 2022. In each year, there are 12 parquet files for each month. Each parquet file contains approximately 13,000,000 rows with columns as follows:
 
 | Field Name | Description                                                                                                                                     |
