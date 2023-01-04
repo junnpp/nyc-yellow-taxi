@@ -4,31 +4,7 @@
 
 ### [Report can be found here](./preprocess.ipynb)
 
-A yearly / hourly NYC yellow taxi analysis from 2011 to 2022. In each year, there are 12 parquet files for each month. Each parquet file contains approximately 13,000,000 rows with columns as follows:
-
-| Field Name | Description                                                                                                                                     |
-| -----------|------------------------------------------------------------------------------------------------------------------------------------------------ |
-| VendorID | A code indicating the TPEP provider that provided the record. 1=Creative Mobile Technologies                                                      |
-| tpep_pickup_datetime | The date and time when the meter was engaged.                                                                                         |
-| tpep_dropoff_datetime|The date and time when the meter was disengaged.                                                                                       |
-| Passenger_count|The number of passengers in the vehicle. This is a driver-entered value.                                                                     |
-| Trip_distance|The elapsed trip distance in miles reported by the taximeter                                                                                   |
-| PULocationID|TLC Taxi Zone in which the taximeter was engaged                                                                                                |
-| DOLocationID|TLC Taxi Zone in which the taximeter was disengaged                                                                                             |
-| RateCodeID|The final rate code in effect at the end of the trip. 1= Standard rate 2=JFK 3=Newark 4=Nassau or Westchester 5=Negotiated fare 6=Group ride      |
-| Store_and_fwd_flag|This flag indicates whether the trip record was held in vehicle memory before sending to the vendor                                       |
-| Payment_type|A numeric code signifying how the passenger paid for the trip. 1= Credit card 2= Cash 3= No charge 4= Dispute 5= Unknown 6= Voided trip         |
-| Fare_amount|The time-and-distance fare calculated by the meter.                                                                                              |
-| Extra|Miscellaneous extras and surcharges. Currently                                                                                                         |
-| MTA_tax|$0.50 MTA tax that is automatically triggered based on the metered rate in use                                                                       |
-| Improvement_surcharge|$0.30 improvement surcharge assessed trips at the flag drop. The improvement surcharge began being levied in 2015.                     |
-| Tip_amount|Tip amount – This field is automatically populated for credit card tips. Cash tips are not included                                               |
-| Tolls_amount|Total amount of all tolls paid in trip.                                                                                                         |
-| Total_amount|The total amount charged to passengers. Does not include cash tips.                                                                             |
-| Congestion_Surcharge|Total amount collected in trip for NYS congestion surcharge.                                                                            |
-| Airport_fee|$1.25 for pick up only at LaGuardia and John F. Kennedy Airports                                                                                 |
-
-Among these 19 columns, only `tpep_pickup_datetime`, `tpep_dropoff_datetime`, `tpep_dropoff_datetime`, `total_amount`, `tip_amount`, and `tip_amount` will be used for the further analysis.
+A yearly/hourly NYC yellow taxi analysis from 2011 to 2022. Each year, there are 12 parquet files for each month. Each parquet file contains approximately 13,000,000 rows with 19 columns specified [here](https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf). Among the 19 columns, only `tpep_pickup_datetime`, `tpep_dropoff_datetime`, `tpep_dropoff_datetime`, `total_amount`, `tip_amount`, and `tip_amount` will be used for the further analysis.
 
 ## [TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
 
@@ -42,7 +18,10 @@ Among these 19 columns, only `tpep_pickup_datetime`, `tpep_dropoff_datetime`, `t
 2. The average fare/tip amount, ride time, and distance per pick-up location id.
 3. Which pick-up location is more likely to have a higher fare amount?
 
-![duck-logo](./viz/duckdb-logo.png)
+<p align="left">
+  <img align="middle" src="./viz/duckdb-logo.png" width="450">
+</p>
+
 
 [DuckDB](https://duckdb.org/), a simple and fast database management system, is mainly used throughout the analysis. It works seamlessly with Pandas and allows you to directly query parquet files. Most function names come from Postgres and relational API targets Pandas compatibility. More advantages of using DuckDB are listed [here](https://alex-monahan.github.io/2021/08/22/Python_and_SQL_Better_Together.html).
 
@@ -74,10 +53,10 @@ Since there are too many rows for my local computer to handle, each parquet file
 
 ## Iterating Process
 
-Even after excluding all irrelevant data, there are still 142 parquet files to import, clean, and analyze. It is inefficient to conduct this procedure manually for each data set. With defined python functions, the whole process is applied to each data set automatically. Then all processed data sets are concatenated into a final data frame with 12,689,473 rows. After a minor cleaning process, the final data frame has approximately 12,688,000 rows. This data is then imported to the tableau for visualization.
+Even after excluding all irrelevant data, there are still 142 parquet files to import, clean, and analyze. It is inefficient to conduct this procedure manually for each data set. With defined python functions, the whole process is applied to each data set automatically. Then all processed data sets are concatenated into a final data frame with 12,689,473 rows. After a minor cleaning process, the final data frame has approximately 12,688,000 rows. This data is then imported into the tableau for visualization.
 
 ## Visualization
 
-An interactice visulization using Tableau. It can be found [here](https://public.tableau.com/app/profile/junhyeok.park/viz/NYCYellowTaxi_16721581629340/NYCTraffic).
+An interactive visualization using Tableau. It can be found [here](https://public.tableau.com/app/profile/junhyeok.park/viz/NYCYellowTaxi_16721581629340/NYCTraffic).
 
 ![viz-1](./viz/viz-1.png)
