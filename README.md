@@ -57,6 +57,6 @@ Even after excluding all irrelevant data, there are still 142 parquet files to i
 
 ## Visualization
 
-An interactive visualization using Tableau. It can be found [here](https://public.tableau.com/app/profile/junhyeok.park/viz/NYCYellowTaxi_16721581629340/NYCTraffic).
+An interactive visualization using Tableau. It can be found [here](https://public.tableau.com/app/profile/junhyeok.park/viz/NYCYellowTaxiAnalysis_16733749237460/NYCTraffic).
 
 ![viz-1](./viz/viz-1.png)
