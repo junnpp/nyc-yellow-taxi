@@ -2,22 +2,19 @@
 
 ![logo](./viz/nyc-tlc-logo.png)
 
-### [Report can be found here](./preprocess.ipynb)
+## [NYC Yellow Taxi Analysis - Report](./preprocess.ipynb)
 
 A yearly/hourly NYC yellow taxi analysis from 2011 to 2022 using Python / SQL (DuckDB). Each year, there are 12 parquet files. Each parquet file contains approximately 13,000,000 rows with 19 columns specified [here](https://www.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf). Among the 19 columns, only `tpep_pickup_datetime`, `tpep_dropoff_datetime`, `tpep_dropoff_datetime`, `total_amount`, `tip_amount`, and `tip_amount` are used for the analysis.
 
-- [Data Source](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
-
 ## Goals
 
-1. Get the yearly/hourly trend of NYC Yellow Taxi since 2011.
-2. Analyze the average fare/tip amount, ride time, and distance per pick-up location id.
-3. Find pick-up locations that are more likely to have a higher fare amount.
+- Get the yearly/hourly trend of NYC Yellow Taxi since 2011.
+- Analyze the average fare/tip amount, ride time, and distance per pick-up location id.
+- Find pick-up locations that are more likely to have a higher fare amount.
 
 ## Challenge
 
-- Files are too big
-  - Imported each parquet file with about 13,000,000 rows and pre-processed it. Then, combined all of the cleaned/grouped data frames. This dramatically reduced the total number of rows without losing any essential information for the analysis. The final data frame has approximately 12,688,000 rows.
+- Imported each parquet file with about 13,000,000 rows and pre-processed it. Then, combined all of the cleaned/grouped data frames. This dramatically reduced the total number of rows without losing any essential information for the analysis. The final data frame has approximately 12,688,000 rows.
 
 ## Data Importing
 
@@ -43,3 +40,7 @@ Since there are too many rows for my local computer to handle, each parquet file
 An interactive visualization using Tableau. It can be found [here](https://public.tableau.com/app/profile/junhyeok.park/viz/NYCYellowTaxiAnalysis_16733749237460/NYCTraffic).
 
 ![viz-1](./viz/viz-1.png)
+
+## Reference
+
+- [TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
