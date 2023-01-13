@@ -37,9 +37,9 @@ Since there are too many rows for my local computer to handle, each parquet file
 
 ## Visualization
 
-An interactive visualization using Tableau. It can be found [here](https://public.tableau.com/app/profile/junhyeok.park/viz/NYCYellowTaxiAnalysis_16733749237460/NYCTraffic).
+[NYC Yellow Taxi Visualization](https://public.tableau.com/app/profile/junhyeok.park/viz/NYCYellowTaxiAnalysis_16733749237460/NYCTraffic).
 
-![viz-1](./viz/viz-1.png)
+![viz-1](./viz/viz-nyc.png)
 
 ## Reference
 
