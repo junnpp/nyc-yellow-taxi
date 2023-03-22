@@ -37,7 +37,7 @@ Since there are too many rows for my local computer to handle, each parquet file
 
 ## Visualization
 
-### [NYC Yellow Taxi Interactice Visualization](https://public.tableau.com/app/profile/junhyeok.park/viz/NYCYellowTaxiAnalysis_16733749237460/NYCTraffic)
+### [NYC Yellow Taxi Interactice Visualization](https://public.tableau.com/app/profile/junhyeok.park/viz/NYCYellowTaxiAnalysis_16733749237460/NYCDashboard)
 
 ![viz-1](./viz/viz-nyc.png)
 
